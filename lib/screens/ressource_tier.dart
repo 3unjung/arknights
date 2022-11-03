@@ -21,14 +21,18 @@ class _RessourceTierState extends State<RessourceTier> {
     final noLmd = widget.tierData;
     bool isPressed = false;
 
+    Text ite;
+    Text zed;
+
+
     if(noLmd.length>1){
 
       if (isPressed == true) {
-        Text("je suis vraie");
+        ite =  Text("je suis vraie");
       }
-      else {Text("je suis mauvaise");}
+      else { zed = Text("je suis mauvaise");}
 
-      (isPressed == true) ? Text("je suis vraie") : ("je suis mauvaise");
+      // (isPressed == true) ? ite = Text("je suis vraie") :  zed = Text("je suis mauvaise");
 
 
       for(Map tierItem in widget.tierData) {
@@ -44,10 +48,7 @@ class _RessourceTierState extends State<RessourceTier> {
 
                   ),
 
-
-
-
-
+              Text("$zed"),
 
               IconButton(onPressed: () {setState(() {tierItem["qty"] -= 1;});
               },
