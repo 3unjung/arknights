@@ -1,3 +1,4 @@
+
 import 'package:arknights/screens/ressource.dart';
 import 'package:flutter/material.dart';
 
@@ -18,17 +19,36 @@ class _RessourceTierState extends State<RessourceTier> {
   Widget build(BuildContext context) {
     List<Widget> tierWidgets = [];
     final noLmd = widget.tierData;
+    bool isPressed = false;
+
     if(noLmd.length>1){
+
+      if (isPressed == true) {
+        Text("je suis vraie");
+      }
+      else {Text("je suis mauvaise");}
+
+      (isPressed == true) ? Text("je suis vraie") : ("je suis mauvaise");
+
+
       for(Map tierItem in widget.tierData) {
         tierWidgets.add(
+
           Row(
             children: [
               Image.asset(tierItem["img"],width: 90,height: 45,),
-              IconButton(onPressed: (){setState(() {tierItem["qty"] += 1 ;});
-              },
+              IconButton(onPressed: (){
+                setState(() { tierItem["qty"] += 1 ;});},
                 icon: const Icon(Icons.arrow_upward, size: 35, color: Colors.blue,),
-              ),
-              Text("${tierItem["qty"]}", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
+                  // Text("${tierItem["qty"]}", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900);
+
+                  ),
+
+
+
+
+
+
               IconButton(onPressed: () {setState(() {tierItem["qty"] -= 1;});
               },
                 icon: const Icon(
@@ -36,7 +56,7 @@ class _RessourceTierState extends State<RessourceTier> {
                   size: 35,
                   color: Colors.red,
                 ),
-              )
+              ),
             ],
           ),
         );
@@ -45,6 +65,7 @@ class _RessourceTierState extends State<RessourceTier> {
 
     return Column(
       children: tierWidgets,
+
     );
   }
 
