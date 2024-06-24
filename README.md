@@ -1,4 +1,4 @@
-# arknights
+# Arknights ressources manager project 
 
 Arknights stuffs
 
